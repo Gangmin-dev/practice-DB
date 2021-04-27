@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS `teacher` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(10) NOT NULL,
+  `image` VARCHAR(1000),
+  PRIMARY KEY (`id`));

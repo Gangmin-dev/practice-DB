@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS `author` (
+  `id` VARCHAR(3) NOT NULL,
+  `name` VARCHAR(12) NOT NULL,
+  PRIMARY KEY (`id`));

@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS `subject` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(10) NOT NULL,
+  PRIMARY KEY (`id`));
