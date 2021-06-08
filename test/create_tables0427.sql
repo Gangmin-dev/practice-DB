@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `problem` (
   `created_date` DATE NOT NULL,
   `updated_date` DATE,
   `part_id` INT NOT NULL,
-  `author_id` VARCHAR(2) NOT NULL,
+  `author_id` VARCHAR(3) NOT NULL,
   `difficulty` VARCHAR(3),
   `code` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
@@ -114,6 +114,7 @@ CREATE TABLE IF NOT EXISTS `problem` (
   CONSTRAINT `fk_problem_field_id`
     FOREIGN KEY (`part_id`)
     REFERENCES `part` (`id`));
+
 
 CREATE TABLE IF NOT EXISTS `solved_problem` (
   `id` INT NOT NULL AUTO_INCREMENT,

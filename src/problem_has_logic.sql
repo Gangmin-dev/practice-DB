@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS `problem_has_logic` (
     REFERENCES `problem` (`id`),
   CONSTRAINT `fk_problem_has_logic_logic_id`
     FOREIGN KEY (`logic_id`)
-    REFERENCES `logic` (`id`))
+    REFERENCES `logic` (`id`));

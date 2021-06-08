@@ -66,3 +66,65 @@ INSERT INTO part (title, chapter_id) VALUES('생물 다양성', 5);
 INSERT INTO part (title, chapter_id) VALUES('생태계 상호작용', 5);
 INSERT INTO part (title, chapter_id) VALUES('물질의 순환과 에너지 흐름', 5);
 
+
+INSERT INTO teacher (name) VALUES('최수준');
+INSERT INTO teacher (name) VALUES('강기원');
+INSERT INTO teacher (name) VALUES('박종민');
+INSERT INTO teacher (name) VALUES('강준호');
+INSERT INTO teacher (name) VALUES('이윤희');
+
+
+INSERT INTO class (teacher_id, subject_id, created_year, name) VALUES (1, (SELECT id FROM subject WHERE title = '생명과학1'), 2021, '2021_최수준_생명1_단과');
+INSERT INTO class (teacher_id, subject_id, created_year, name) VALUES (2, (SELECT id FROM subject WHERE title = '수학'), 2021, '2021_강기원_수학_단과');
+INSERT INTO class (teacher_id, subject_id, created_year, name) VALUES (3, (SELECT id FROM subject WHERE title = '수학'), 2021, '2021_박종민_수학_단과');
+INSERT INTO class (teacher_id, subject_id, created_year, name) VALUES (4, (SELECT id FROM subject WHERE title = '화학1'), 2021, '2021_강준호_화학1_단과');
+INSERT INTO class (teacher_id, subject_id, created_year, name) VALUES (5, (SELECT id FROM subject WHERE title = '화학1'), 2021, '2021_이윤희_화학1_단과');
+
+
+INSERT INTO student (id, name, enrollment_flag, created_time) VALUES ('gangmin', '김강민', '0', NOW());
+INSERT INTO student (id, name, enrollment_flag, created_time) VALUES ('dongho', '최동호', '0', NOW());
+INSERT INTO student (id, name, enrollment_flag, created_time) VALUES ('kangho', '문강호', '0', NOW());
+INSERT INTO student (id, name, enrollment_flag, created_time) VALUES ('hyukju', '전혁주', '0', NOW());
+INSERT INTO student (id, name, enrollment_flag, created_time) VALUES ('jaeha', '황재하', '0', NOW());
+
+
+INSERT INTO class_has_student (class_id, student_id) VALUES (1, 'gangmin');
+INSERT INTO class_has_student (class_id, student_id) VALUES (2, 'gangmin');
+INSERT INTO class_has_student (class_id, student_id) VALUES (4, 'gangmin');
+INSERT INTO class_has_student (class_id, student_id) VALUES (1, 'dongho');
+INSERT INTO class_has_student (class_id, student_id) VALUES (3, 'dongho');
+INSERT INTO class_has_student (class_id, student_id) VALUES (5, 'dongho');
+INSERT INTO class_has_student (class_id, student_id) VALUES (1, 'kangho');
+INSERT INTO class_has_student (class_id, student_id) VALUES (2, 'kangho');
+INSERT INTO class_has_student (class_id, student_id) VALUES (1, 'hyukju');
+INSERT INTO class_has_student (class_id, student_id) VALUES (3, 'jaeha');
+INSERT INTO class_has_student (class_id, student_id) VALUES (5, 'jaeha');
+
+
+
+INSERT INTO problem (part_id, author_id, answer, created_date, code) 
+VALUES ((SELECT id FROM part WHERE part.title = '가계도'), (SELECT id FROM author WHERE author.name = '김성현'), 'ㄱㄴㄷ', NOW(), 'code1');
+INSERT INTO problem (part_id, author_id, answer, created_date, code) 
+VALUES ((SELECT id FROM part WHERE title = '가계도'), (SELECT id FROM author WHERE name = '박범훈'), 'ㄴㄷ', NOW(), 'code2');
+INSERT INTO problem (part_id, author_id, answer, created_date, code) 
+VALUES ((SELECT id FROM part WHERE title = '가계도'), (SELECT id FROM author WHERE name = '김성현'), 'ㄱ', NOW(), 'code3');
+INSERT INTO problem (part_id, author_id, answer, created_date, code) 
+VALUES ((SELECT id FROM part WHERE title = '세포 분열'), (SELECT id FROM author WHERE name = '허성혁'), 'ㄷ', NOW(), 'code4');
+INSERT INTO problem (part_id, author_id, answer, created_date, code) 
+VALUES ((SELECT id FROM part WHERE title = '세포 분열'), (SELECT id FROM author WHERE name = '전혁주'), 'ㄱㄴㄷ', NOW(), 'code5');
+INSERT INTO problem (part_id, author_id, answer, created_date, code) 
+VALUES ((SELECT id FROM part WHERE title = '흥분과 전도'), (SELECT id FROM author WHERE name = '전혁주'), 'ㄴ', NOW(), 'code6');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
